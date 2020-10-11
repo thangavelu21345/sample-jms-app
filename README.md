@@ -22,6 +22,7 @@ Singleton - creates one XStream instance and used across application. Springboot
 Single schema defenition is used in both micro services, as the difference is only in data.
 The XML message format / schema consists of title, description of the video and url to launch the video
 
+```xml
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="VideoSearchMessage">
     <xs:complexType>
@@ -33,7 +34,7 @@ The XML message format / schema consists of title, description of the video and 
     </xs:complexType>
   </xs:element>
 </xs:schema>
-
+```
 
 # Pre-requsites
 Java

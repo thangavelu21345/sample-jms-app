@@ -10,7 +10,7 @@ Get the items from queue, stored as part of story #1 and change "Telecom" to "Te
 * telecom micro service, targeting story #1
 * MessageTransformation micro service, targeting story #2
 
-# design patterns used
+# Design patterns used
 * Controller pattern in first micro service, which exposed Rest API and takes the requests from client. It then forwards to service layer.
 * Service pattern - handles business logic and decision making layer of the entire atomic operation. Calls invoker to get results from each data source.
 * Service Invoker - Decided which command to be invoked based on conditions.
@@ -18,7 +18,7 @@ Get the items from queue, stored as part of story #1 and change "Telecom" to "Te
 * Conditional routing - Enabling JMS implementation based on rules defined in application.properties.
 * Singleton - creates one XStream instance and used across application. Springboot internally creates singleton for all beans by default.  
 
-# schema defenition 
+# Schema defenition 
 Single schema defenition is used in both micro services, as the difference is only in data.
 The XML message format / schema consists of title, description of the video and url to launch the video
 

@@ -57,7 +57,7 @@ Configure the following details in src/main/resources/application.properties
 * Create JMS queue according to below property value, or update existing queue name
   * unprocessed.message.queue=jms/samplegroup.youtube.1.unprocessed.queue
 
-**steps to compile source code**
+**steps to compile source code and start application**
 * Navigate to root folder of telecom micro service and issue the below command in command prompt
   * mvn clean install 
 * Navigate to target folder of telecom micro service and issue the below command in command prompt
@@ -79,7 +79,7 @@ Configure the following details in src/main/resources/application.properties
 * Create a new JMS topic or use existing topic to store final results
   * processed.message.queue=jms/samplegroup.youtube.1.processed.queue
 
-**steps to compile source code**
+**steps to compile source code and start application**
 * Navigate to root folder of MessageTransformation micro service and issue the below command in command prompt
   * mvn clean install 
 * Navigate to target folder of MessageTransformation micro service and issue the below command in command prompt

@@ -1,16 +1,16 @@
 # sample-jms-app
 Sample program to check YouTube videos and transform it
 
-# Story 1 
+# story 1 
 Consume YouTube API and search for "telecom". The key fields to be taken from are - Video title and URL. Store the results into a queue for further usage.
-# Story 2 
+# story 2 
 Get the items from queue, stored as part of story #1 and change "Telecom" to "Teleco" and store the modified message into another queue.
 
-# Number of micro services created : 2
+# number of micro services created : 2
 telecom micro service, targeting story #1
 MessageTransformation micro service, targeting story #2
 
-# Design patterns used
+# design patterns used
 Controller pattern in first micro service, which exposed Rest API and takes the requests from client. It then forwards to service layer.
 Service pattern - handles business logic and decision making layer of the entire atomic operation. Calls invoker to get results from each data source.
 Service Invoker - Decided which command to be invoked based on conditions.

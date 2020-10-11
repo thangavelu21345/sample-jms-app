@@ -37,32 +37,33 @@ The XML message format / schema consists of title, description of the video and 
 ```
 
 # Pre-requsites
-Java
-Maven
-Settings.xml pointing to public maven repo (preferred)
-ActiveMQ installed in local / JMS queue destination details https://activemq.apache.org/getting-starte
-Youtube API key  - https://developers.google.com/youtube/v3/docs
+* Java
+* Maven
+  * Settings.xml pointing to public maven repo (preferred)
+* ActiveMQ installed in local / JMS queue destination details https://activemq.apache.org/getting-starte
+* Youtube API key  - https://developers.google.com/youtube/v3/docs
 
-Telecom Micro service
-Configure the following details in src/main/resources/application.properties 
+# Telecom Micro service
+Configure the following details in src/main/resources/application.properties
 
-# Server port to run the application
-server.port=8082
+* Server port to run the application
+  * server.port=8082
+* Active MQ broker details
+  * spring.activemq.broker-url=tcp://localhost:61616
+  * spring.activemq.user=admin
+  * spring.activemq.password=admin
+* Obtain youtube API key for searching videos and provide it here
+  * youtube.api.key=xxxxxxxxxxxxxxxxxxxxxxxxx 
+* Create JMS queue according to below property value, or update existing queue name
+  * unprocessed.message.queue=jms/samplegroup.youtube.1.unprocessed.queue
 
-# Active MQ broker details
-spring.activemq.broker-url=tcp://localhost:61616
-spring.activemq.user=admin
-spring.activemq.password=admin
+**steps to compile source code**
+* Navigate to root folder of telecom micro service and issue the below command in command prompt
+  * mvn clean install 
+* Navigate to target folder of telecom micro service and issue the below command in command prompt
+  * java -jar telecom-0.0.1-SNAPSHOT.jar
 
-# Obtain youtube API key for searching videos and provide it here
-youtube.api.key=xxxxxxxxxxxxxxxxxxxxxxxxx
-
-# Create JMS queue according to below property value, or update existing queue name
-unprocessed.message.queue=jms/samplegroup.youtube.1.unprocessed.queue
-
-# steps to compile source code
-Navigate to root folder of telecom micro service and issue the below command in command prompt
-mvn clean install 
+Springboot application will start running after this step.
 
 
 
